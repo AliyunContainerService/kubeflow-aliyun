@@ -1,0 +1,3 @@
+[submodule "manifests"]
+	path = manifests
+	url = https://github.com/cheyang/manifests.git
