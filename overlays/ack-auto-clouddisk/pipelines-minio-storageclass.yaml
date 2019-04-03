@@ -1,0 +1,10 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1beta1
+metadata:
+  name: pipeline-minio-provisioner
+provisioner: alicloud/disk
+parameters:
+  type: cloud_ssd
+  regionid: cn-beijing
+  zoneid: cn-beijing-e
+reclaimPolicy: Retain

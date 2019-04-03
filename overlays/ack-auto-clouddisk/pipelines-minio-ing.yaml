@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: minio-ing
+  namespace: kubeflow
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /minio
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /minio
+        backend:
+          serviceName: minio-service
+          servicePort: 9000

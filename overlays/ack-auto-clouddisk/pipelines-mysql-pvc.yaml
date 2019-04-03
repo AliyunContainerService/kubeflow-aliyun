@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    ksonnet.io/component: pipeline
+  name: mysql-pv-claim
+  namespace: kubeflow
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: pipeline-minio-provisioner
+  resources:
+    requests:
+      storage: 100Gi

@@ -1,0 +1,17 @@
+bases:
+- ../../../manifests/pipelines/api-service/base
+- ../../../manifests/pipelines/minio/base
+- ../../../manifests/pipelines/mysql/base
+- ../../../manifests/pipelines/persistent-agent/base
+- ../../../manifests/pipelines/pipelines-runner/base
+- ../../../manifests/pipelines/pipelines-ui/base
+- ../../../manifests/pipelines/pipelines-viewer/base
+- ../../../manifests/pipelines/scheduledworkflow/base
+namespace: kubeflow
+resources:
+- pipelines-minio-storageclass.yaml
+- pipelines-mysql-storageclass.yaml
+- pipelines-minio-pvc.yaml
+- pipelines-mysql-pvc.yaml
+- pipelines-namespace.yaml
+- pipelines-ui-ing.yaml

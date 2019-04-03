@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ml-pipeline-ui
+  namespace: kubeflow
+  annotations:
+    nginx.org/websocket-services: "ws-svc"
+    ingress.kubernetes.io/rewrite-target: /pipeline
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /pipeline
+        backend:
+          serviceName: ml-pipeline-ui
+          servicePort: 80
