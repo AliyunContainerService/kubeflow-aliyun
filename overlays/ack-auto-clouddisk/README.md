@@ -42,12 +42,6 @@ sed -i.bak 's/storage: 100Gi/storage: 200Gi/g' \
 ```
 
 
-
-
-
-
-
-
 ### Q&A
 
 1.
