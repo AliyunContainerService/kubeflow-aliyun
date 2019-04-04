@@ -16,3 +16,19 @@ resources:
 - pipelines-mysql-pvc.yaml
 - pipelines-namespace.yaml
 - pipelines-ui-ing.yaml
+
+secretGenerator:
+- name: pipeline-secret
+  namespace: kubeflow
+  files:
+    - tls.crt
+    - tls.key
+  type: "kubernetes.io/tls"
+- name: pipeline-auth
+  namespace: kubeflow
+  files: 
+    - auth
+  type: Opaque
+
+generatorOptions:
+ disableNameSuffixHash: true

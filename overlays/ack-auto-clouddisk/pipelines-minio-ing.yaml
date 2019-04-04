@@ -6,6 +6,10 @@ metadata:
   annotations:
     ingress.kubernetes.io/rewrite-target: /minio
 spec:
+  tls:
+  - hosts:
+    - pipelines.kubeflow.org
+    secretName: pipeline-secret
   rules:
   - http:
       paths:
