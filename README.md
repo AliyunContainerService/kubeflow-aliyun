@@ -8,16 +8,17 @@ Kubeflow致力于利用Kubernetes将机器学习（ML）工作流程的部署变
 
 - 您需要安装[kustomize](https://github.com/kubernetes-sigs/kustomize.git)
 
-在Linux环境，可以执行
+在Linux和Mac OS环境，可以执行
 
 ```
-curl -o /usr/bin/kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v2.0.3/kustomize_2.0.3_linux_amd64
-```
-
-在Mac OS环境，可以执行
-
-```
-curl -o /usr/bin/kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v2.0.3/kustomize_2.0.3_darwin_amd64
+opsys=linux  # or darwin, or windows
+curl -s https://api.github.com/repos/kubernetes-sigs/kustomize/releases/latest |\
+  grep browser_download |\
+  grep $opsys |\
+  cut -d '"' -f 4 |\
+  xargs curl -O -L
+mv kustomize_*_${opsys}_amd64 /usr/bin/kustomize
+chmod u+x /usr/bin/kustomize
 ```
 
 在Windows环境，可以下载[kustomize_2.0.3_windows_amd64.exe](https://github.com/kubernetes-sigs/kustomize/releases/download/v2.0.3/kustomize_2.0.3_windows_amd64.exe)

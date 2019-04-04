@@ -9,6 +9,7 @@ git clone https://github.com/aliyunContainerService/kubeflow-aliyun
 3. 
 
 ```
+cd kubeflow-aliyun/
 kustomize build overlays/ack-auto-clouddisk > /tmp/ack-auto-clouddisk.yaml
 ```
 
@@ -41,7 +42,24 @@ sed -i.bak 's/storage: 100Gi/storage: 200Gi/g' \
     /tmp/ack-auto-clouddisk.yaml
 ```
 
+6. 验证pipelines的yaml文件
+
+```
+kubectl create --validate=true --dry-run=true -f /tmp/ack-auto-clouddisk.yaml
+```
+
+
+7. 利用kubectl部署pipelines
+
+```
+kubectl create -f /tmp/ack-auto-clouddisk.yaml
+```
+
+8. 清理pipelines
+
+```
+kubectl delete -f /tmp/ack-auto-clouddisk.yaml
+```
 
 ### Q&A
 
-1.
