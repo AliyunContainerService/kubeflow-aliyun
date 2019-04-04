@@ -1,12 +1,13 @@
 bases:
-- ../../../manifests/pipelines/api-service/base
-- ../../../manifests/pipelines/minio/base
-- ../../../manifests/pipelines/mysql/base
-- ../../../manifests/pipelines/persistent-agent/base
-- ../../../manifests/pipelines/pipelines-runner/base
-- ../../../manifests/pipelines/pipelines-ui/base
-- ../../../manifests/pipelines/pipelines-viewer/base
-- ../../../manifests/pipelines/scheduledworkflow/base
+- ../../manifests/pipelines/api-service/base
+- ../../manifests/pipelines/minio/base
+- ../../manifests/pipelines/mysql/base
+- ../../manifests/pipelines/persistent-agent/base
+- ../../manifests/pipelines/pipelines-runner/base
+- ../../manifests/pipelines/pipelines-ui/base
+- ../../manifests/pipelines/pipelines-viewer/base
+- ../../manifests/pipelines/scheduledworkflow/base
+- ../../manifests/argo/base
 namespace: kubeflow
 resources:
 - pipelines-minio-storageclass.yaml
