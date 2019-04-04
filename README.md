@@ -30,4 +30,5 @@ Pipelines是Kubeflow社区在2019年带给社区的最大惊喜。和普通的Ku
 
 - [自动创建SSD云盘，部署pipelines](overlays/ack-auto-clouddisk)
 - [手动创建SSD云盘，部署pipelines](overlays/ack-auto-clouddisk)
-- [利用RDS和OSS，部署pipelines（TODO）]
+- 利用RDS和OSS，部署pipelines(TODO)
+- 欢迎Hack
