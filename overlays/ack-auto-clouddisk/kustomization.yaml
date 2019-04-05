@@ -17,6 +17,7 @@ resources:
 - pipelines-mysql-pvc.yaml
 - pipelines-namespace.yaml
 - pipelines-ui-ing.yaml
+- arena-runner-role-binding.yaml
 
 secretGenerator:
 - name: pipeline-secret
