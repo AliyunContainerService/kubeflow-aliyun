@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: arena-installer
+  namespace: kube-system
+spec:
+  restartPolicy: Never
+  serviceAccountName: admin
+  hostNetwork: true
+  containers:
+  - name: arena
+    image: registry.aliyuncs.com/acs/arena:0.2.0-3129577
+    env:
+    - name: useHostNetwork
+      value: "true"
+    - name: usePrometheus
+      value: "true"
+    - name: platform
+      value: ack
