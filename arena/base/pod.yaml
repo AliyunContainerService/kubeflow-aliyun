@@ -17,3 +17,5 @@ spec:
       value: "true"
     - name: platform
       value: ack
+    - name: namespace
+      value: kubeflow

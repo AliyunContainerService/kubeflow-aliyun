@@ -1,7 +1,5 @@
 resources:
 - pod.yaml
-- role-binding.yaml
 - role.yaml
 - clusterrole-binding.yaml
-- clusterrole.yaml
 - sa.yaml
