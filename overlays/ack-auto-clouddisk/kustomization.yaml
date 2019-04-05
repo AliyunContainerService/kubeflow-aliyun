@@ -8,6 +8,7 @@ bases:
 - ../../manifests/pipelines/pipelines-viewer/base
 - ../../manifests/pipelines/scheduledworkflow/base
 - ../../manifests/argo/base
+- ../../arena/base
 namespace: kubeflow
 resources:
 - pipelines-minio-storageclass.yaml
@@ -16,9 +17,6 @@ resources:
 - pipelines-mysql-pvc.yaml
 - pipelines-namespace.yaml
 - pipelines-ui-ing.yaml
-- arena-installer.yaml
-- arena-launcher-role.yaml
-- arena-launcher-rolebinding.yaml
 
 secretGenerator:
 - name: pipeline-secret
