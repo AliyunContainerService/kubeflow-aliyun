@@ -1,3 +1,36 @@
 bases:
-  - ../../base
-namePrefix: arena-
+- ../../manifests/pipelines/api-service/base
+- ../../manifests/pipelines/minio/base
+- ../../manifests/pipelines/mysql/base
+- ../../manifests/pipelines/persistent-agent/base
+- ../../manifests/pipelines/pipelines-runner/base
+- ../../manifests/pipelines/pipelines-ui/base
+- ../../manifests/pipelines/pipelines-viewer/base
+- ../../manifests/pipelines/scheduledworkflow/base
+- ../../manifests/argo/base
+- ../../arena/base
+namespace: kubeflow
+resources:
+- pipelines-minio-pv.yaml
+- pipelines-mysql-pv.yaml
+- pipelines-minio-pvc.yaml
+- pipelines-mysql-pvc.yaml
+- pipelines-namespace.yaml
+- pipelines-ui-ing.yaml
+- arena-runner-role-binding.yaml
+
+secretGenerator:
+- name: pipeline-secret
+  namespace: kubeflow
+  files:
+    - tls.crt
+    - tls.key
+  type: "kubernetes.io/tls"
+- name: pipeline-auth
+  namespace: kubeflow
+  files: 
+    - auth
+  type: Opaque
+
+generatorOptions:
+  disableNameSuffixHash: true
