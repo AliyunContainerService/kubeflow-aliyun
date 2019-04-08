@@ -7,7 +7,7 @@
 3.下载源代码
 
 ```
-git clone https://github.com/aliyunContainerService/kubeflow-aliyun
+git clone --recursive https://github.com/aliyunContainerService/kubeflow-aliyun
 ```
 
 4.安全配置
