@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ml-pipeline-ui
+  namespace: kubeflow
+  annotations:
+    nginx.org/websocket-services: "ws-svc"
+    ingress.kubernetes.io/rewrite-target: /pipeline
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: pipeline-auth
+    nginx.ingress.kubernetes.io/auth-realm: "Pipelines Authentication Required - admin"
+spec:
+  tls:
+  - hosts:
+    - pipelines.kubeflow.org
+    secretName: pipeline-secret
+  rules:
+  - http:
+      paths:
+      - path: /pipeline
+        backend:
+          serviceName: ml-pipeline-ui
+          servicePort: 80
