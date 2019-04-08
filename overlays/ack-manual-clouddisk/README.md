@@ -44,10 +44,10 @@ kustomize build overlays/ack-manual-clouddisk > /tmp/ack-manual-clouddisk.yaml
 6.查看所在的Kubernetes集群节点所在的地域和可用区,并且根据其所在节点替换可用区，假设您的集群所在可用区为`cn-hangzhou-g`,可以执行下列命令
 
 ```
-sed -i.bak 's/regionid: cn-beijing/regionid: cn-hangzhou/g' \
+sed -i.bak 's/region: cn-beijing/region: cn-hangzhou/g' \
     /tmp/ack-manual-clouddisk.yaml
 
-sed -i.bak 's/zoneid: cn-beijing-e/zoneid: cn-hangzhou-g/g' \
+sed -i.bak 's/zone: cn-beijing-e/zone: cn-hangzhou-g/g' \
     /tmp/ack-manual-clouddisk.yaml
 ```
 > 建议您检查一下/tmp/ack-manual-clouddisk.yaml修改是否已经设置
