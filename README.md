@@ -30,6 +30,6 @@ chmod u+x /usr/bin/kustomize
 Pipelines是Kubeflow社区在2019年带给社区的最大惊喜。和普通的Kubeflow基础服务不同，Kubeflow Pipelines需要依赖于mysql和minio这些有状态服务，也就需要考虑如何持久化和备份数据。对此阿里云容器服务会提供一系列方案，您可以实际情况进行选择：
 
 - [自动创建SSD云盘，部署pipelines](overlays/ack-auto-clouddisk)
-- [手动创建SSD云盘，部署pipelines](overlays/ack-auto-clouddisk)
+- [手动创建SSD云盘，部署pipelines](overlays/ack-manual-clouddisk)
 - 利用RDS和OSS，部署pipelines(TODO)
 - 欢迎Hack
