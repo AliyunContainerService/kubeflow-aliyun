@@ -8,7 +8,7 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
-  storageClassName: pipeline-minio-provisioner
+  storageClassName: pipeline-mysql-provisioner
   resources:
     requests:
       storage: 100Gi
